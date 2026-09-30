@@ -34,3 +34,7 @@ trip volume, time patterns, distance bins, and passenger behavior.
 1. Download the `.pbix` file from the [`docs/`](docs/) folder (click the file → "Download raw file")
 2. Open with **Power BI Desktop** (free from the Microsoft Store)
 
+## Project Structure
+- `sql/schema.sql` — table structure of cleaned yellow taxi data
+- `sql/analysis.sql` — aggregate tables (passenger, payment, top zones, weekday)
+- `docs/` — documentation & dashboard screenshots
