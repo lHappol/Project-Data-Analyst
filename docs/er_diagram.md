@@ -1,6 +1,6 @@
-<img width="6784" height="5073" alt="ERD NYC" src="https://github.com/user-attachments/assets/8190c5a1-6344-4435-b44c-86cd04e64f86" /> ER Diagram — NYC Yellow Taxi Analysis
+# NYC Yellow Taxi Analysis
 
- Architecture Overview
+## Architecture Overview
 
 โครงสร้างข้อมูลเป็นแบบ **Layered Warehouse**:
 
@@ -11,56 +11,5 @@ Raw Layer (yellow_taxi) → Clean Layer (view) → Aggregation Layer (6 tables) 
 ![ER Diagram] ![Uploading ERD NYC.png…]()
 
 )
-
-```mermaid
-erDiagram
-    yellow_taxi ||--o{ yellow_taxi_clean : "filter (view)"
-    yellow_taxi_clean ||--|| agg_monthly : "GROUP BY month"
-    yellow_taxi_clean ||--|| agg_hourly : "GROUP BY hour"
-    yellow_taxi_clean ||--|| agg_weekday : "GROUP BY day"
-    yellow_taxi_clean ||--|| agg_top_zones : "GROUP BY PULocationID"
-    yellow_taxi_clean ||--|| agg_distance_bins : "GROUP BY distance"
-    yellow_taxi_clean ||--|| agg_payment : "GROUP BY payment_type"
-
-    yellow_taxi_clean {
-        timestamp tpep_pickup_datetime
-        timestamp tpep_dropoff_datetime
-        int passenger_count
-        numeric trip_distance
-        int PULocationID
-        numeric fare_amount
-        numeric tip_amount
-        numeric total_amount
-        int payment_type
-    }
-    agg_monthly {
-        date month
-        bigint trips
-        numeric revenue
-        numeric avg_fare
-        numeric avg_distance
-        numeric avg_duration_min
-    }
-    agg_hourly {
-        int hour
-        bigint trips
-        numeric avg_fare
-    }
-    agg_weekday {
-        int day_of_week
-        bigint trips
-    }
-    agg_top_zones {
-        int location_id
-        bigint pickups
-    }
-    agg_distance_bins {
-        text distance_bin
-        bigint trips
-        numeric avg_fare
-    }
-    agg_payment {
-        int payment_type
-        bigint trips
-        numeric revenue
+<img width="6784" height="5073" alt="ERD NYC" src="https://github.com/user-attachments/assets/8190c5a1-6344-4435-b44c-86cd04e64f86" /> ER Diagram — 
     }
