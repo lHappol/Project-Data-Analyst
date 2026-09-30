@@ -25,8 +25,12 @@ trip volume, time patterns, distance bins, and passenger behavior.
 - [ER Diagram](docs/er_diagram.md)
   
 ## Dashboard Preview
-![Overview](page1-overview.png)
-![Time Patterns](page2-time-patterns.png)
-![Distance & Passengers](page3-distance.png)
+![Overview](docs/page1-overview.png)
+![Time Patterns](docs/page2-time-patterns.png)
+![Distance & Passengers](docs/page3-distance.png)
+
 ## How to View
-Download the `.pbix` file and open with Power BI Desktop.
+
+1. Download the `.pbix` file from the [`docs/`](docs/) folder (click the file → "Download raw file")
+2. Open with **Power BI Desktop** (free from the Microsoft Store)
+
